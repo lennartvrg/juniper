@@ -65,7 +65,7 @@ impl Subscription {
         use rand::{rngs::StdRng, Rng, SeedableRng};
         let mut rng = StdRng::from_entropy();
 
-        let stream = tokio::time::interval(Duration::from_secs(3)).map(move |_| {
+        let stream = futures::stream::StreamExt::map(tokio_stream::wrappers::IntervalStream::new(tokio::time::interval(Duration::from_secs(3))), move |_| {
             counter += 1;
 
             if counter == 2 {
@@ -76,7 +76,7 @@ impl Subscription {
                     )),
                 ))
             } else {
-                let random_id = rng.gen_range(1000, 1005).to_string();
+                let random_id = rng.gen_range(1000..1005).to_string();
                 let human = context.get_human(&random_id).unwrap().clone();
 
                 Ok(RandomHuman {

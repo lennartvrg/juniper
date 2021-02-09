@@ -1,6 +1,9 @@
 use juniper::{
-    graphql_object, graphql_value, EmptyMutation, EmptySubscription, GraphQLEnum, GraphQLError,
-    RootNode, Value,
+    graphql_object,  GraphQLEnum, 
+};
+#[cfg(test)]
+use juniper::{
+    graphql_value, EmptyMutation, EmptySubscription, GraphQLError, RootNode, Value
 };
 
 #[derive(GraphQLEnum)]
@@ -42,7 +45,7 @@ impl User {
     }
 
     async fn delayed() -> bool {
-        tokio::time::delay_for(std::time::Duration::from_millis(100)).await;
+        tokio::time::sleep(std::time::Duration::from_millis(100)).await;
         true
     }
 }
@@ -68,7 +71,7 @@ impl Query {
     }
 
     async fn delayed() -> bool {
-        tokio::time::delay_for(std::time::Duration::from_millis(100)).await;
+        tokio::time::sleep(std::time::Duration::from_millis(100)).await;
         true
     }
 }

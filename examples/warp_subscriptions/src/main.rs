@@ -109,7 +109,7 @@ struct Subscription;
 impl Subscription {
     async fn users() -> UsersStream {
         let mut counter = 0;
-        let stream = tokio::time::interval(Duration::from_secs(5)).map(move |_| {
+        let stream = futures::stream::StreamExt::map(tokio_stream::wrappers::IntervalStream::new(tokio::time::interval(Duration::from_secs(5))), move |_| {
             counter += 1;
             if counter == 2 {
                 Err(FieldError::new(
