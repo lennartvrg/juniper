@@ -12,17 +12,17 @@ documentation = "https://docs.rs/juniper_iron"
 repository = "https://github.com/graphql-rust/juniper"
 
 [dependencies]
-futures = "0.3.1"
+futures = "0.3.15"
 juniper = { version = "0.15.2", path = "../juniper" }
-iron = ">= 0.5, < 0.7"
-serde_json = "1.0.2"
-urlencoded = ">= 0.5, < 0.7"
+iron = "0.6.1"
+serde_json = "1.0.64"
+urlencoded = "0.6.0"
 
 [dev-dependencies]
 juniper = { version = "0.15.2", path = "../juniper", features = ["expose-test-schema"] }
-iron-test = "0.6"
-logger = "0.4"
-mount = "0.4"
-percent-encoding = "2"
-router = "0.6"
-url = "2"
+iron-test = "0.6.0"
+logger = "0.4.0"
+mount = "0.4.0"
+percent-encoding = "2.1.0"
+router = "0.6.0"
+url = "2.2.2"

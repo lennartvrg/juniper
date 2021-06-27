@@ -9,9 +9,9 @@ documentation = "https://docs.rs/juniper_subscriptions"
 repository = "https://github.com/graphql-rust/juniper"
 
 [dependencies]
-futures = "0.3.12"
+futures = "0.3.15"
 juniper = { version = "0.15.2", path = "../juniper", default-features = false }
 
 [dev-dependencies]
-serde_json = "1.0"
-tokio = { version = "1.2.0", features = ["macros", "rt"] }
+serde_json = "1.0.64"
+tokio = { version = "1.7.1", features = ["macros", "rt"] }

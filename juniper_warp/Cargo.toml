@@ -12,21 +12,21 @@ repository = "https://github.com/graphql-rust/juniper"
 subscriptions = ["juniper_graphql_ws"]
 
 [dependencies]
-anyhow = "1.0"
+anyhow = "1.0.41"
 bytes = "1.0.1"
-futures = "0.3.12"
+futures = "0.3.15"
 juniper = { version = "0.15.2", path = "../juniper", default-features = false }
 juniper_graphql_ws = { version = "0.2.2", path = "../juniper_graphql_ws", optional = true }
-serde = { version = "1.0.123", features = ["derive"] }
-serde_json = "1.0.62"
-thiserror = "1.0.23"
-tokio = { version = "1.2.0", features = ["rt"] }
-warp = "0.3.0"
+serde = { version = "1.0.126", features = ["derive"] }
+serde_json = "1.0.64"
+thiserror = "1.0.25"
+tokio = { version = "1.7.1", features = ["rt"] }
+warp = "0.3.1"
 
 [dev-dependencies]
-env_logger = "0.8"
+env_logger = "0.8.4"
 juniper = { version = "0.15.2", path = "../juniper", features = ["expose-test-schema"] }
-log = "0.4"
-percent-encoding = "2.1"
-tokio = { version = "1.2.0", features = ["macros", "rt"] }
-url = "2"
+log = "0.4.14"
+percent-encoding = "2.1.0"
+tokio = { version = "1.7.1", features = ["macros", "rt"] }
+url = "2.2.2"

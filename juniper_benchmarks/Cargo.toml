@@ -5,12 +5,12 @@ edition = "2018"
 authors = ["Christoph Herzog <chris@theduke.at>"]
 
 [dependencies]
-futures = "0.3"
+futures = "0.3.15"
 juniper = { path = "../juniper" }
 
 [dev-dependencies]
-criterion = "0.3"
-tokio = { version = "1.2.0", features = ["rt", "rt-multi-thread"] }
+criterion = "0.3.4"
+tokio = { version = "1.7.1", features = ["rt", "rt-multi-thread"] }
 
 [[bench]]
 name = "benchmark"
