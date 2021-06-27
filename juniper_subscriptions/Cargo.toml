@@ -14,4 +14,4 @@ juniper = { version = "0.15.6", path = "../juniper", default-features = false }
 
 [dev-dependencies]
 serde_json = "1.0.64"
-tokio = { version = "1.7.1", features = ["macros", "rt-core"] }
+tokio = { version = "1.7.1", features = ["macros", "rt"] }
